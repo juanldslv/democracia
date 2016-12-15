@@ -73,3 +73,6 @@ C:\Users\Juan\Source\Repos\Democracia\Democracia\bin\Microsoft.Owin.Security.Mic
 C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.csprojResolveAssemblyReference.cache
 C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.dll
 C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.pdb
+C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.Migrations.InitialCreate.resources
+C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.csproj.GenerateResource.Cache
+C:\Users\Juan\Source\Repos\Democracia\Democracia\obj\Debug\Democracia.Migrations._20161215.resources

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Democracia.Controllers
 {
+    [Authorize]
     public class StatesController : Controller
     {
         //instancia de la base de datos 
@@ -28,6 +29,7 @@ namespace Democracia.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(State state)
         {
             if (!ModelState.IsValid)
@@ -53,6 +55,7 @@ namespace Democracia.Controllers
             return View(state);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(State state)
         {
             if (!ModelState.IsValid)
@@ -93,6 +96,7 @@ namespace Democracia.Controllers
             return View(state);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, State state)
 
         {
@@ -111,14 +115,19 @@ namespace Democracia.Controllers
                 if (ex.InnerException != null && ex.InnerException.InnerException != null &&
                     ex.InnerException.InnerException.Message.Contains("REFERENCE"))
                 {
-                    ViewBag.Error = " Can´t delete the record, because has related records";
                     
-                    
+                    ModelState.AddModelError(
+                        string.Empty, " Can´t delete the record, because has related records"
+                        );
+
                 }
                 else
                 {
-                    ViewBag.Error = ex.Message;
                     
+                    ModelState.AddModelError(
+                       string.Empty, ex.Message
+                       );
+
                 }
 
                 return View(state);
